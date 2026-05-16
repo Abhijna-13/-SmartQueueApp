@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top row: token number badge + name + status badge -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <!-- Token Number Badge -->
+            <FrameLayout
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/circle_purple_light"
+                android:layout_marginEnd="14dp">
+
+                <TextView
+                    android:id="@+id/tvAdminTokenNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="#1"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#6C63FF" />
+            </FrameLayout>
+
+            <!-- Name + timestamp -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAdminName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customer Name"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E" />
+
+                <TextView
+                    android:id="@+id/tvAdminTimestamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:00 PM"
+                    android:textSize="12sp"
+                    android:textColor="#9CA3AF"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Status Badge -->
+            <TextView
+                android:id="@+id/tvAdminStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waiting"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/badge_background"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <!-- Action Buttons row (only shown for waiting/serving tokens) -->
+        <LinearLayout
+            android:id="@+id/layoutActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- Mark as Serving -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMarkServing"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:text="Serve"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                app:backgroundTint="#10B981"
+                app:cornerRadius="8dp" />
+
+            <!-- Mark as Completed -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMarkCompleted"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="Complete"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                app:backgroundTint="#F59E0B"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
